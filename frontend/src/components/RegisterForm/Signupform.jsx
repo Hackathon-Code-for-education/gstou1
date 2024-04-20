@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Слишком короткое имя!')
@@ -29,12 +30,29 @@ const register = async (obj) => {
     let response = await axios.post("http://ashabars.beget.tech/api/register", {...obj});
     console.log(response.data);
     console.log({...obj})
-    // Действия после успешной регистрации, например, перенаправление или отображение сообщения
+    localStorage.setItem('authToken', response.data.access_token);
+    localStorage.setItem('authUser', response.data.user);
+    
   } catch (error) {
     console.error(`Ошибка регистрации:`, error);
-    // Обработка ошибок, например, отображение сообщения об ошибке
+    
   }
+  
 }
+const fetchAuthStatus = async () => {
+  try {
+    const token = localStorage.getItem('authToken');
+    const response = await axios.get('http://ashabars.beget.tech/api/user', {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    return response.data; 
+  } catch (error) {
+    console.error('Error fetching auth status:', error);
+    return null; 
+  }
+};
+
+
 
 const SignupForm = () => (
   <div className=" max-w-md mt-[10%] mx-auto bg-white shadow-xl
@@ -86,7 +104,7 @@ const SignupForm = () => (
             <ErrorMessage name="confirmPassword" component="div" className="text-red-500 text-xs mt-2" />
           </div>
           <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-           <Link to="/works">Регистрация </Link> 
+            Регистрация
           </button>
           <p className="mt-2 text-center text-sm text-gray-600">
             Уже есть аккаунт? 
@@ -101,3 +119,4 @@ const SignupForm = () => (
 );
 
 export default SignupForm;
+

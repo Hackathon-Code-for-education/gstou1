@@ -5,15 +5,30 @@ import {Router, Routes, Route } from 'react-router-dom';
 import LoginForm from "./components/RegisterForm/LoginForm";
 import ResetPasswordForm from "./components/RegisterForm/ResetPasswordForm";
 import PageSer from "./components/Page/Page";
+import ProtectedRoute from "./components/ProtectedRout";
+
 
 function App() {
   return (
     <div className="App">
+<<<<<<< HEAD
  
+=======
+      
+>>>>>>> bd69d4838264d6a07ce8a8ce40d0395768944346
         <Routes>
 
+         
           <Route path="/" element={<Landing />} />
+<<<<<<< HEAD
           <Route path="/works" element={<PageSer />} />
+=======
+          <Route path="/pageSer" element={
+    <ProtectedRoute>
+      <PageSer />
+    </ProtectedRoute>
+  }/>
+>>>>>>> bd69d4838264d6a07ce8a8ce40d0395768944346
           <Route path="/signupForm" element={<SignupForm />} />
           <Route path="/loginForm" element={<LoginForm />} />
           <Route path="/reset-password" element={<ResetPasswordForm />} />
