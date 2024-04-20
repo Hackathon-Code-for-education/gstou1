@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -10,6 +11,21 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string()
     .required('Обязательное поле'),
 });
+
+const authenticate = async (email, password) => {
+  try {
+    const response = await axios.post("http://ashabars.beget.tech/api/login", {
+      email: email,
+      password: password
+    });
+    console.log('Authentication successful:', response.data);
+    localStorage.setItem('authToken', response.data.access_token);
+    localStorage.setItem('authUser', response.data.user);
+  } catch (error) {
+    console.error('Authentication error:', error);
+    throw error;
+  }
+}
 
 
 const LoginForm = () => (
@@ -20,7 +36,11 @@ const LoginForm = () => (
         password: '',
       }}
       validationSchema={LoginSchema}
-      onSubmit={values => {
+      onSubmit={async (values, { setSubmitting, resetForm }) => {
+        const userData = await authenticate(values.email, values.password);
+            console.log('User logged in:', userData);
+            resetForm();
+            setSubmitting(false); // Сброс формы после успешной отправки
         alert(JSON.stringify(values, null, 2));
       }}
     >
