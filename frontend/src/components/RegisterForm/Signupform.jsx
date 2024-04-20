@@ -2,6 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -19,6 +20,17 @@ const SignupSchema = Yup.object().shape({
     .required('Обязательное поле'),
 });
 
+const register = async (obj) => {
+  try {
+    let response = await axios.post("http://ashabars.beget.tech/api/register", {...obj});
+    console.log(response.data);
+    // Действия после успешной регистрации, например, перенаправление или отображение сообщения
+  } catch (error) {
+    console.error("Ошибка регистрации:", error);
+    // Обработка ошибок, например, отображение сообщения об ошибке
+  }
+}
+
 const SignupForm = () => (
   <div className=" max-w-md mt-[10%] mx-auto bg-white shadow-xl
 
@@ -33,8 +45,11 @@ const SignupForm = () => (
       }}
       validationSchema={SignupSchema}
 
-      onSubmit={values => {
+      onSubmit={async (values, { setSubmitting }) => {
+        await register(values);
+        
         alert(JSON.stringify(values, null, 2));
+        setSubmitting(false);
       }}
     >
       {({ errors, touched }) => (
