@@ -6,8 +6,8 @@ import Univer from './Univer';
 const PageSer = () => {
   return (
     <div>
-        {/* <Menu />
-        <Search /> */}
+        <Menu />
+        <Search />
         <Univer />
     </div>
 
