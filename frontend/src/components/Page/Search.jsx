@@ -47,7 +47,7 @@ const people = [
 
 const Search = () => {
     return (
-        <div>
+        <>
         <div className='flex justify-center mt-10'>
         <div className='bg-gray-200 rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]'>
         <AiOutlineSearch size={25} />
@@ -76,7 +76,7 @@ const Search = () => {
       ))}
     </ul>
 
-        </div>
+        </>
     );
 };
 
