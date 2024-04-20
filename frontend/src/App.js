@@ -4,12 +4,14 @@ import SignupForm from "./components/RegisterForm/Signupform";
 import {Router, Routes, Route } from 'react-router-dom';
 import LoginForm from "./components/RegisterForm/LoginForm";
 import ResetPasswordForm from "./components/RegisterForm/ResetPasswordForm";
+import PageSer from "./components/Page/Page";
 
 function App() {
   return (
     <div className="App">
+      {/* <PageSer /> */}
         <Routes>
-          
+
           <Route path="/" element={<Landing />} />
           <Route path="/signupForm" element={<SignupForm />} />
           <Route path="/loginForm" element={<LoginForm />} />

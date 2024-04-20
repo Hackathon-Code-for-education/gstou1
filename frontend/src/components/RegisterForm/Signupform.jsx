@@ -7,7 +7,11 @@ import axios from 'axios';
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Слишком короткое имя!')
-    .max(15, 'Слишком длинное имя!')
+    .max(10, 'Слишком длинное имя!')
+    .required('Обязательное поле'),
+  surName: Yup.string()
+    .min(2, 'Слишком короткое фамилие!')
+    .max(10, 'Слишком длинное фамилие!')
     .required('Обязательное поле'),
   email: Yup.string()
     .email('Неверный email адрес')
@@ -39,6 +43,7 @@ const SignupForm = () => (
     <Formik
       initialValues={{
         name: '',
+        surName: '',
         email: '',
         password: '',
         confirmPassword: ''
@@ -58,6 +63,11 @@ const SignupForm = () => (
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Имя</label>
             <Field name="name" type="text" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" />
             <ErrorMessage name="name" component="div" className="text-red-500 text-xs mt-2" />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="surName" className="block text-sm font-medium text-gray-700">Фамилия</label>
+            <Field name="surName" type="text" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" />
+            <ErrorMessage name="surName" component="div" className="text-red-500 text-xs mt-2" />
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
