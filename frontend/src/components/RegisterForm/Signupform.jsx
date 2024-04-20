@@ -2,13 +2,14 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
     .min(2, 'Слишком короткое имя!')
     .max(10, 'Слишком длинное имя!')
     .required('Обязательное поле'),
-  surName: Yup.string()
+  surname: Yup.string()
     .min(2, 'Слишком короткое фамилие!')
     .max(10, 'Слишком длинное фамилие!')
     .required('Обязательное поле'),
@@ -23,6 +24,18 @@ const SignupSchema = Yup.object().shape({
     .required('Обязательное поле'),
 });
 
+const register = async (obj) => {
+  try {
+    let response = await axios.post("http://ashabars.beget.tech/api/register", {...obj});
+    console.log(response.data);
+    console.log({...obj})
+    // Действия после успешной регистрации, например, перенаправление или отображение сообщения
+  } catch (error) {
+    console.error("Ошибка регистрации:", error);
+    // Обработка ошибок, например, отображение сообщения об ошибке
+  }
+}
+
 const SignupForm = () => (
   <div className=" max-w-md mt-[10%] mx-auto bg-white shadow-xl
 
@@ -31,15 +44,18 @@ const SignupForm = () => (
     <Formik
       initialValues={{
         name: '',
-        surName: '',
+        surname: '',
         email: '',
         password: '',
         confirmPassword: ''
       }}
       validationSchema={SignupSchema}
 
-      onSubmit={values => {
+      onSubmit={async (values, { setSubmitting }) => {
+        await register(values);
+        
         alert(JSON.stringify(values, null, 2));
+        setSubmitting(false);
       }}
     >
       {({ errors, touched }) => (
@@ -50,9 +66,9 @@ const SignupForm = () => (
             <ErrorMessage name="name" component="div" className="text-red-500 text-xs mt-2" />
           </div>
           <div className="mb-4">
-            <label htmlFor="surName" className="block text-sm font-medium text-gray-700">Фамилия</label>
-            <Field name="surName" type="text" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" />
-            <ErrorMessage name="surName" component="div" className="text-red-500 text-xs mt-2" />
+            <label htmlFor="surname" className="block text-sm font-medium text-gray-700">Фамилия</label>
+            <Field name="surname" type="text" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" />
+            <ErrorMessage name="surname" component="div" className="text-red-500 text-xs mt-2" />
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
