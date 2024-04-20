@@ -13,7 +13,6 @@ const Navbar = () => {
           Xaxathon
         </div>
         <div className='flex'>
-<<<<<<< HEAD
           <Link
             to='/signupForm'
             className='hidden p-3 px-6 text-center mb-1 cursor-pointer text-white bg-darkBlue rounded-full baseline hover:bg-darkGrayishBlue md:block'
@@ -23,17 +22,6 @@ const Navbar = () => {
           <Link
             to='/loginForm'
             className='hidden p-3 px-6 pt-2 text-darkBlue hover:text-darkGrayishBlue md:block cursor-pointer'
-=======
-          <a
-            to='#'
-            className='hidden p-3 px-6 pt-2 text-center mb-1 cursor-pointer text-white bg-darkBlue rounded-full baseline hover:bg-darkGrayishBlue md:block'
-          >
-            Зарегистрироваться
-          </a>
-          <a
-            to='#'
-            className='hidden p-3 px-6 pt-2 font-bold text-darkBlue hover:text-darkGrayishBlue md:block cursor-pointer'
->>>>>>> db44d22cea5f8c32563589a6102d2dc514085118
           >
             Войти
           </Link>

@@ -13,22 +13,12 @@ const Hero = () => {
           Сервис
           </h1>
           <p className='max-w-sm text-[18px] text-center text-darkGrayishBlue md:text-left'>
-          по онлайн экскурсиям   в
-          университеты с возможностью
-        узнать информацию у студентов и
-              приемной комиссии
+          по онлайн экскурсиям   в университеты с возможностью узнать информацию у студентов и приемной комиссии
           </p>
           <div className='flex  flex-col w-[190px] justify-center md:justify-start'>
-<<<<<<< HEAD
             <Link
               to='/signupForm'
-              className='p-4 mt-10 cursor-pointer text-white bg-darkBlue rounded-full baseline hover:bg-darkGrayishBlue'
-=======
-            <a
-              to='#'
-              className='p-3 pt-2 mt-10 cursor-pointer text-center  text-white bg-darkBlue rounded-full baseline hover:bg-darkGrayishBlue'
->>>>>>> db44d22cea5f8c32563589a6102d2dc514085118
-            >
+              className='p-4 mt-10 cursor-pointer text-white bg-darkBlue rounded-full baseline hover:bg-darkGrayishBlue'>
               Зарегистрироваться
 
             </Link>
