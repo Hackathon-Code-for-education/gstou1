@@ -20,7 +20,7 @@ const Hero = () => {
           <div className='flex  flex-col w-[190px] justify-center md:justify-start'>
             <a
               to='#'
-              className='p-4 mt-10 cursor-pointer text-white bg-darkBlue rounded-full baseline hover:bg-darkGrayishBlue'
+              className='p-3 pt-2 mt-10 cursor-pointer text-center  text-white bg-darkBlue rounded-full baseline hover:bg-darkGrayishBlue'
             >
               Зарегистрироваться
 

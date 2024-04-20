@@ -14,13 +14,13 @@ const Navbar = () => {
         <div className='flex'>
           <a
             to='#'
-            className='hidden p-3 px-6 text-center mb-1 cursor-pointer text-white bg-darkBlue rounded-full baseline hover:bg-darkGrayishBlue md:block'
+            className='hidden p-3 px-6 pt-2 text-center mb-1 cursor-pointer text-white bg-darkBlue rounded-full baseline hover:bg-darkGrayishBlue md:block'
           >
             Зарегистрироваться
           </a>
           <a
             to='#'
-            className='hidden p-3 px-6 pt-2 text-darkBlue hover:text-darkGrayishBlue md:block cursor-pointer'
+            className='hidden p-3 px-6 pt-2 font-bold text-darkBlue hover:text-darkGrayishBlue md:block cursor-pointer'
           >
             Войти
           </a>
