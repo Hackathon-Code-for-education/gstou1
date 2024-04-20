@@ -16,7 +16,11 @@ function App() {
 
          
           <Route path="/" element={<Landing />} />
-          <Route path="/pageSer" element={<PageSer />} />
+          <Route path="/pageSer" element={
+
+      <PageSer />
+
+  }/>
           <Route path="/signupForm" element={<SignupForm />} />
           <Route path="/loginForm" element={<LoginForm />} />
           <Route path="/reset-password" element={<ResetPasswordForm />} />
