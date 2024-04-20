@@ -5,7 +5,7 @@ import {Router, Routes, Route } from 'react-router-dom';
 import LoginForm from "./components/RegisterForm/LoginForm";
 import ResetPasswordForm from "./components/RegisterForm/ResetPasswordForm";
 import PageSer from "./components/Page/Page";
-import ProtectedRoute from "./components/ProtectedRout";
+
 
 
 function App() {
@@ -16,11 +16,7 @@ function App() {
 
          
           <Route path="/" element={<Landing />} />
-          <Route path="/pageSer" element={
-    <ProtectedRoute>
-      <PageSer />
-    </ProtectedRoute>
-  }/>
+          <Route path="/pageSer" element={<PageSer />} />
           <Route path="/signupForm" element={<SignupForm />} />
           <Route path="/loginForm" element={<LoginForm />} />
           <Route path="/reset-password" element={<ResetPasswordForm />} />
