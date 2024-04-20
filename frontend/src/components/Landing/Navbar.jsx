@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -12,18 +13,18 @@ const Navbar = () => {
           Xaxathon
         </div>
         <div className='flex'>
-          <a
-            to='#'
+          <Link
+            to='/signupForm'
             className='hidden p-3 px-6 text-center mb-1 cursor-pointer text-white bg-darkBlue rounded-full baseline hover:bg-darkGrayishBlue md:block'
           >
             Зарегистрироваться
-          </a>
-          <a
-            to='#'
+          </Link>
+          <Link
+            to='/loginForm'
             className='hidden p-3 px-6 pt-2 text-darkBlue hover:text-darkGrayishBlue md:block cursor-pointer'
           >
             Войти
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import illustrationIntro from '../../assets/images/illustration-intro.jpg';
 
 const Hero = () => {
@@ -18,20 +19,20 @@ const Hero = () => {
               приемной комиссии
           </p>
           <div className='flex  flex-col w-[190px] justify-center md:justify-start'>
-            <a
-              to='#'
+            <Link
+              to='/signupForm'
               className='p-4 mt-10 cursor-pointer text-white bg-darkBlue rounded-full baseline hover:bg-darkGrayishBlue'
             >
               Зарегистрироваться
 
-            </a>
-            <a
-              to='#'
+            </Link>
+            <Link
+              to='/loginForm'
               className='p-4 mt-3 font-bold text-center cursor-pointer text-darkBlue rounded-full baseline hover:text-darkGrayishBlue'
             >
               Войти
 
-            </a>
+            </Link>
           </div>
         </div>
         {/* Image */}

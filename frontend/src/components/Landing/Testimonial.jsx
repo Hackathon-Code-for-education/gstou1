@@ -2,6 +2,7 @@
 import avatarAnisha from '../../assets/images/avatar-anisha.png';
 import avatarAli from '../../assets/images/avatar-ali.png';
 import avatarRichard from '../../assets/images/avatar-richard.png';
+import { Link } from 'react-router-dom';
 
 const Testimonial = () => {
   return (
@@ -46,12 +47,12 @@ const Testimonial = () => {
         </div>
         {/* Button */}
         <div className='my-16'>
-          <a
-            to='#'
+          <Link
+            to='/signupForm'
             className='p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight'
           >
             Зарегистрироваться
-          </a>
+          </Link>
         </div>
       </div>
     </section>
