@@ -9,15 +9,15 @@ import PageSer from "./components/Page/Page";
 function App() {
   return (
     <div className="App">
-      {/* <PageSer /> */}
-        <Routes>
+      <PageSer />
+        {/* <Routes>
 
           <Route path="/" element={<Landing />} />
           <Route path="/signupForm" element={<SignupForm />} />
           <Route path="/loginForm" element={<LoginForm />} />
           <Route path="/reset-password" element={<ResetPasswordForm />} />
           
-        </Routes>
+        </Routes> */}
     </div>
   );
 }
