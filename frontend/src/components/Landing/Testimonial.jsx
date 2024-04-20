@@ -17,33 +17,30 @@ const Testimonial = () => {
           {/* Testimonial 1 */}
           <div className='flex flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:w-1/3'>
             <img src={avatarAnisha} className='w-16 -mt-14' alt='' />
-            <h5 className='text-lg font-bold'>Anisha Li</h5>
+            <div className='text-center bg-cyan-500 p-2 rounded-full px-3 text-white '>ГГНТУ</div>
+            <h5 className='text-lg font-bold'>Айша Магмаева</h5>
             <p className='text-sm text-darkGrayishBlue'>
-              “Manage has supercharged our team's workflow. The ability to
-              maintain visibility on larger milestones at all times keeps
-              everyone motivated.”
+              “Выбрала этот универ и рада, что есть это”
             </p>
           </div>
 
           {/* Testimonial 2 */}
           <div className='hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3'>
             <img src={avatarAli} className='w-16 -mt-14' alt='' />
-            <h5 className='text-lg font-bold'>Ali Bravo</h5>
+            <div className='text-center bg-cyan-500 p-2 rounded-full px-3 text-white '>МФТИ</div>
+            <h5 className='text-lg font-bold'>Екатерина Волкец </h5>
             <p className='text-sm text-darkGrayishBlue'>
-              “We have been able to cancel so many other subscriptions since
-              using Manage. There is no more cross-channel confusion and
-              everyone is much more focused.”
+              “СУПЕР ПУПЕР! Я БЛОГАДАРНА ВАМ!”
             </p>
           </div>
 
           {/* Testimonial 3 */}
           <div className='hidden flex-col items-center p-6 space-y-6 rounded-lg bg-veryLightGray md:flex md:w-1/3'>
             <img src={avatarRichard} className='w-16 -mt-14' alt='' />
-            <h5 className='text-lg font-bold'>Richard Watts</h5>
+            <div className='text-center bg-cyan-500 p-2 rounded-full px-3 text-white '>МГУ</div>
+            <h5 className='text-lg font-bold'>Джамбуш Индус</h5>
             <p className='text-sm text-darkGrayishBlue'>
-              “Manage has supercharged our team's workflow. The ability to
-              maintain visibility on larger milestones at all times keeps
-              everyone motivated.”
+              “Поступил в универ, отлично все, МГУ В СЕРДЦЕ”
             </p>
           </div>
         </div>
@@ -53,7 +50,7 @@ const Testimonial = () => {
             to='#'
             className='p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight'
           >
-            Get Started
+            Зарегистрироваться
           </a>
         </div>
       </div>

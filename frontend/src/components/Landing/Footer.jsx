@@ -17,8 +17,8 @@ const Footer = () => {
             Copyright © 2022, All Rights Reserved
           </div>
           {/* Logo */}
-          <div>
-            <img src={companyLogoWhite} className='h-8' alt='' />
+          <div className='pt-2 text-[25px] text-white font-bold pb-5'>
+          Xaxathon
           </div>
           {/* Social Links Container */}
           <div className='flex justify-center space-x-4'>
@@ -44,51 +44,11 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        {/* List Container */}
-        <div className='flex justify-around space-x-32'>
-          <div className='flex flex-col space-y-3 text-white'>
-            <a to='#' className='hover:text-brightRed'>
-              Home
-            </a>
-            <a to='#' className='hover:text-brightRed'>
-              Pricing
-            </a>
-            <a to='#' className='hover:text-brightRed'>
-              Products
-            </a>
-            <a to='#' className='hover:text-brightRed'>
-              About
-            </a>
-          </div>
-          <div className='flex flex-col space-y-3 text-white'>
-            <a to='#' className='hover:text-brightRed'>
-              Careers
-            </a>
-            <a to='#' className='hover:text-brightRed'>
-              Community
-            </a>
-            <a to='#' className='hover:text-brightRed'>
-              Privacy Policy
-            </a>
-          </div>
-        </div>
 
         {/* Input Container */}
-        <div className='flex flex-col justify-between'>
-          <form>
-            <div className='flex space-x-3'>
-              <input
-                type='text'
-                className='flex-1 px-4 rounded-full focus:outline-none'
-                placeholder='Updated in your inbox'
-              />
-              <button className='px-6 py-2 text-white rounded-full bg-brightRed hover:bg-brightRedLight focus:outline-none'>
-                Go
-              </button>
-            </div>
-          </form>
+        <div className='flex items-end'>
           <div className='hidden text-white md:block'>
-            Copyright © 2022, All Rights Reserved
+            Компания © 2024, Созданная Xaxathon
           </div>
         </div>
       </div>
