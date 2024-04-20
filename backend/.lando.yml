@@ -1,0 +1,50 @@
+name: my-laravel-app
+recipe: laravel
+config:
+  php: '8.2'
+  webroot: public
+  via: nginx
+  database: mysql:5.7
+
+services:
+  appserver:
+    type: php:8.2
+    via: nginx
+    ssl: true
+    xdebug: true
+    composer_version: '2'
+
+  database:
+    type: mysql:5.7
+    portforward: true
+    creds:
+      user: laravel
+      password: laravel
+      database: laravel
+
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
+
+tooling:
+  php:
+    service: appserver
+  artisan:
+    service: appserver
+    cmd: php artisan
+  composer:
+    service: appserver
+  npm:
+    service: appserver
+  node:
+    service: appserver
+  phpunit:
+    service: appserver
+    cmd: vendor/bin/phpunit
+
+proxy:
+  appserver:
+    - laravel.lndo.site
+  phpmyadmin:
+    - pma.laravel.lndo.site

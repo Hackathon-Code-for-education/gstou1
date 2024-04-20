@@ -14,12 +14,14 @@ class AuthController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8',
         ]);
 
         $user = User::create([
             'name' => $validatedData['name'],
+            'surname' => $validatedData['surname'],
             'email' => $validatedData['email'],
             'password' => Hash::make($validatedData['password']),
         ]);
@@ -52,3 +54,4 @@ class AuthController extends Controller
         return response()->json(['message' => 'Successfully logged out']);
     }
 }
+
