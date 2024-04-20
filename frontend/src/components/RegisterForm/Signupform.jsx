@@ -52,7 +52,7 @@ const SignupForm = () => (
           <div className="mb-4">
             <label htmlFor="surName" className="block text-sm font-medium text-gray-700">Фамилия</label>
             <Field name="surName" type="text" className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm" />
-            <ErrorMessage name="name" component="div" className="text-red-500 text-xs mt-2" />
+            <ErrorMessage name="surName" component="div" className="text-red-500 text-xs mt-2" />
           </div>
           <div className="mb-4">
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
