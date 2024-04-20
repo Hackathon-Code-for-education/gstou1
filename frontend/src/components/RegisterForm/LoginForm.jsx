@@ -30,7 +30,7 @@ const authenticate = async (email, password) => {
   }
 }
 
-const authRes = authenticate
+
 
 const LoginForm = () => 
  {
