@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import Abiturent from './Abiturent'
 import StudentApplication from './StudentApplication';
-import University from './University'
 
 const SettingsUser = () => {
 
@@ -28,7 +27,7 @@ const SettingsUser = () => {
                         <li onClick={() => changeActive("abiturent")} className="flex items-center px-3 py-2.5 font-bold bg-white text-indigo-900 border rounded-full">Абитуриент</li>
                         <li onClick={() => changeActive("studentApplication")} className='"flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full"'>Студент</li>
                         <li onClick={() => changeActive("university")} className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full">ВУЗ</li>
-                        <li onClick={logOut} className="flex items-center px-3 py-2.5 mt-[20px] font-bold text-[18px] text-[#ff2929]  hover:text-indigo-900 hover:border hover:rounded-full">Выйти</li>
+                        <li onClick={logOut} className="flex items-center px-3 py-2.5 mt-[20px] font-bold text-[18px] text-[#ff2929]  hover:text-indigo-900 hover:border hover:rounded-full"><Link to="/">Выйти</Link></li>
                     </ul>
                     
                 </div>
@@ -36,7 +35,6 @@ const SettingsUser = () => {
 
             {activeCopm === 'abiturent' && <Abiturent/>}
             {activeCopm === 'studentApplication' && <StudentApplication/>}
-            {activeCopm === 'university' && <University/>}
             
         </div>
         </div>
