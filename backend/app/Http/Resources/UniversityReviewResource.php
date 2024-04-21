@@ -15,11 +15,8 @@ class UniversityReviewResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'university' => $this->university,
             'user' => $this->user,
-            'rating' => $this->rating,
-            'text' => $this->text,
-            'created_at' => $this->created_at,
+            'university' => $this->university,
         ];
     }
 }

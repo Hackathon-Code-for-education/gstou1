@@ -30,7 +30,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::post('universities/reviews', [UniversityReviewController::class, 'store']);
-    Route::get('/universities/search', [UniversityGalleryController::class, 'search']);
+    Route::get('/univers/search', [UniversityGalleryController::class, 'search']);
+
     Route::apiResource('universities', UniversityController::class);
 
     Route::get('/universities/{id}/gallery', [UniversityGalleryController::class, 'index']);
