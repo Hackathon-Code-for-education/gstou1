@@ -16,7 +16,7 @@ const Landing = () => {
       <Features />
       <Testimonial />
       <Footer />
-      {/* <Image /> */}
+      <Image />
     </>
   );
 }
