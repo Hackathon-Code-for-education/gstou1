@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiOutlineHome, AiOutlineTeam, AiOutlineProject, AiOutlineSearch} from 'react-icons/ai';
-import Menu from '../MenuItem';
 const people = [
     {
       name: 'ГГНТУ',
@@ -50,7 +49,6 @@ const people = [
 const PageUniver = () => {
     return (
         <>
-         <Menu />
         <div className='flex justify-center mt-10'>
         <div className='bg-gray-200 rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]'>
         <AiOutlineSearch size={25} />
