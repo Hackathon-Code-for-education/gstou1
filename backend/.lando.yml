@@ -1,4 +1,4 @@
-name: my-laravel-app
+name: xaxathon
 recipe: laravel
 config:
   php: '8.2'

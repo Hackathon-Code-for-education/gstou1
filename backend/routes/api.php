@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\UniversityController;
+use App\Http\Controllers\Api\UniversityGalleryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +26,10 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
+
+    Route::apiResource('universities', UniversityController::class);
+
+    Route::get('/universities/{id}/gallery', [UniversityGalleryController::class, 'index']);
+    Route::post('/universities/{id}/gallery', [UniversityGalleryController::class, 'store']);
+    Route::delete('/universities/{id}/gallery/{galleryId}', [UniversityGalleryController::class, 'destroy']);
 });
