@@ -23,7 +23,6 @@ function App() {
           <Route path="/loginForm" element={<LoginForm />} />
           <Route path="/reset-password" element={<ResetPasswordForm />} />
           <Route path="/page" element={<PageUniver />}/>
-          <Route path="/settings" element={<Settings/>} />
           <Route path="/chat" element={<ChatApp />} />
           
         </Routes>
