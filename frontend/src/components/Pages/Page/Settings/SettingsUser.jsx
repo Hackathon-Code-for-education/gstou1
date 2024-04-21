@@ -24,17 +24,11 @@ const SettingsUser = () => {
                     <h2 className="pl-3 mb-4 text-2xl font-semibold">Настройки</h2>
 
                     <ul>
-<<<<<<< HEAD
 
                         <li onClick={() => changeActive("abiturent")} className={`flex cursor-pointer items-center px-3 py-2.5 font-bold ${ activeCopm === 'abiturent' ? ' text-indigo-900 border rounded-full' : '' } bg-white`}>Абитуриент</li>
                         <li onClick={() => changeActive("studentApplication")} className={`flex items-center cursor-pointer rounded-full px-3 py-2.5 font-semibold hover:text-indigo-900 ${ activeCopm === 'studentApplication' ? ' text-indigo-900 border rounded-full' : '' } hover:border hover:rounded-full`}>Студент</li>
-                        <li onClick={logOut} className="flex items-center px-3 py-2.5 mt-[20px] cursor-pointer font-bold text-[18px] text-[#ff2929]  hover:bg-[#ff4747] hover:text-[#ffffff] hover:border hover:rounded-full">Выйти</li>
-=======
-                        <li onClick={() => changeActive("abiturent")} className="flex items-center px-3 py-2.5 font-bold bg-white text-indigo-900 border rounded-full">Абитуриент</li>
-                        <li onClick={() => changeActive("studentApplication")} className='"flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full"'>Студент</li>
-                        <li onClick={() => changeActive("university")} className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full">ВУЗ</li>
                         <li onClick={logOut} className="flex items-center px-3 py-2.5 mt-[20px] font-bold text-[18px] text-[#ff2929]  hover:text-indigo-900 hover:border hover:rounded-full"><Link to="/">Выйти</Link></li>
->>>>>>> 832bd1e13d591814bc43c3bb1e6febbb1f0d194e
+
                     </ul>
                     
                 </div>

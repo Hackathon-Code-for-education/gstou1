@@ -15,11 +15,7 @@ const Landing = () => {
       <Features />
       <Testimonial />
       <Footer />
-<<<<<<< HEAD
 
-=======
-      
->>>>>>> 832bd1e13d591814bc43c3bb1e6febbb1f0d194e
     </>
   );
 }
