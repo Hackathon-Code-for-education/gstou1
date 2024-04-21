@@ -21,4 +21,9 @@ class University extends Model implements HasMedia
     protected $casts = [
         'admin_ids' => 'array',  // Указываем Laravel, что это поле должно быть преобразовано в массив
     ];
+
+    public function reviews()
+    {
+        return $this->hasMany(UniversityReview::class, 'university_id');
+    }
 }

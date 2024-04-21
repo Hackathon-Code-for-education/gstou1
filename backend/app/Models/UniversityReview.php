@@ -9,7 +9,7 @@ class UniversityReview extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['university_id', 'user_id', 'review', 'rating'];
+    protected $fillable = ['university_id', 'user_id', 'rating', 'text'];
 
     public function university()
     {
@@ -20,4 +20,6 @@ class UniversityReview extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+
 }

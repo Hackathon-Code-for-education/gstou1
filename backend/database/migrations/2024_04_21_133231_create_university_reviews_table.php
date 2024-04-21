@@ -17,10 +17,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('university_id');
             $table->unsignedBigInteger('user_id');
-            $table->text('review');
             $table->integer('rating');
             $table->longText('text');
-            $table->timestamps();
 
             $table->foreign('university_id')->references('id')->on('universities')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
