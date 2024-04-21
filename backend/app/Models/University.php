@@ -26,4 +26,9 @@ class University extends Model implements HasMedia
     {
         return $this->hasMany(UniversityReview::class, 'university_id');
     }
+
+    public function students()
+    {
+        return $this->hasMany(UniversityStudent::class);
+    }
 }

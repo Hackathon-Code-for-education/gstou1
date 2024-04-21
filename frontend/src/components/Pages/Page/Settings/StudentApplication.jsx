@@ -34,8 +34,8 @@ const StudentApplication = () => {
                                 </div>
                                 
                                 <div className="mb-2 sm:mb-6">
-                                    <label htmlFor="name" className="block mb-2 text-sm font-medium text-indigo-900 dark:text-white">Your name</label>
-                                    <input type="name" id="name" className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="your name" required />
+                                    <label htmlFor="name" className="block mb-2 text-sm font-medium text-indigo-900 dark:text-white">Подробнее</label>
+                                    <input type="name" id="name" className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="Введите текст..." required />
                                 </div>
 
                                 <div className="flex justify-end">
