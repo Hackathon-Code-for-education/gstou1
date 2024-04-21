@@ -53,26 +53,26 @@ const people = [
 
 const PageUniver = () => {
 
-  const [universities, setUniversities] = useState([])
+  // const [universities, setUniversities] = useState([])
  
-  useEffect(() => {
-    const fetchUniversities = async () => {
+  // useEffect(() => {
+  //   const fetchUniversities = async () => {
       
-      try {
-        const response = fetch('http://ashabars.beget.tech/api/univers/search?name=S', {
-          method: 'GET',
-          headers: {'Authorization': `Bearer ${localStorage.getItem('authToken')}`}
-        })
-        if (response.ok) {
-          const data = await response.json(); // Преобразование ответа в JSON
-          setUniversities(data); // Обновление состояния списка университетов
-        }
-      } catch (error) {
-        console.error('Failed to fetch universities:', error); // Логирование ошибки
-      }
-    }
-    fetchUniversities()
-  },[])
+  //     try {
+  //       const response = fetch('http://ashabars.beget.tech/api/univers/search?name=S', {
+  //         method: 'GET',
+  //         headers: {'Authorization': `Bearer ${localStorage.getItem('authToken')}`}
+  //       })
+  //       if (response.ok) {
+  //         const data = await response.json(); // Преобразование ответа в JSON
+  //         setUniversities(data); // Обновление состояния списка университетов
+  //       }
+  //     } catch (error) {
+  //       console.error('Failed to fetch universities:', error); // Логирование ошибки
+  //     }
+  //   }
+  //   fetchUniversities()
+  // },[])
  
     return (
         <>
