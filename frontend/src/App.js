@@ -6,6 +6,7 @@ import LoginForm from "./components/RegisterForm/LoginForm";
 import ResetPasswordForm from "./components/RegisterForm/ResetPasswordForm";
 import ChatApp from "./components/Pages/Page/University/UniverItem/ChatApp/ChatApp";
 import MenuItems from "./components/Pages/Page/MenuItems";
+import MenuUniver from "./components/Pages/Page/University/UniverItem/MenuUniver";
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/reset-password" element={<ResetPasswordForm />} />
           <Route path="/chat" element={<ChatApp />} />
           <Route path="/page" element={<MenuItems />}/>
+          <Route path="/page/univer/" element={<MenuUniver />} />
           
         </Routes>
     </div>

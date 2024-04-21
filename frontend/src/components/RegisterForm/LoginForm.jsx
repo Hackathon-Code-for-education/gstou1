@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
-
+import { redirect } from 'react-router-dom';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -19,6 +19,7 @@ const authenticate = async (email, password) => {
       email: email,
       password: password
     });
+
     console.log('Authentication successful:', response.data);
     localStorage.setItem('authToken', response.data.access_token);
     localStorage.setItem('authUser', response.data.user);
@@ -32,8 +33,9 @@ const authenticate = async (email, password) => {
 
 
 
-const LoginForm = () => 
- {
+const LoginForm = () => {
+
+  const navigate = useNavigate();
   
   return (
   
@@ -45,12 +47,19 @@ const LoginForm = () =>
       }}
       validationSchema={LoginSchema}
       onSubmit={async (values, { setSubmitting, resetForm }) => {
-        const userData = await authenticate(values.email, values.password);
-            console.log('User logged in:', userData);
-            resetForm();
-            setSubmitting(false); // Сброс формы после успешной отправки
-        // alert(JSON.stringify(values, null, 2));
-      }}
+        try {
+          const isAuthenticated = await authenticate(values.email, values.password);
+          if (isAuthenticated) {
+            console.log('User logged in:', isAuthenticated);
+            navigate('/page'); // Redirect to '/page' on successful login
+          }
+        } catch (error) {
+          console.error('Login failed:', error);
+        }
+        resetForm();
+        setSubmitting(false);
+      }  
+    }
     >
       {({ errors, touched }) => (
         <Form>
@@ -70,7 +79,7 @@ const LoginForm = () =>
           </div>
           <div className="flex items-center justify-between">
             <button type="submit" className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              <Link to='/pageSerэ'>
+              <Link to='/page'>
               Войти
               </Link>
             </button>

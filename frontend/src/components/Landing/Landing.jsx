@@ -4,8 +4,11 @@ import Hero from './Hero';
 import Features from './Features';
 import Testimonial from './Testimonial';
 import Footer from './Footer';
+import Image from '../Image';
 
 const Landing = () => {
+
+  console.log(localStorage.getItem('authToken'));
   return (
     <>
       <Navbar />
@@ -13,6 +16,7 @@ const Landing = () => {
       <Features />
       <Testimonial />
       <Footer />
+      {/* <Image /> */}
     </>
   );
 }
