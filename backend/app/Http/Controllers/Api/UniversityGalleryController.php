@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UniversityControllerResource;
 use App\Models\University;
 use http\Env\Response;
 use Illuminate\Http\Request;
@@ -89,7 +90,7 @@ class UniversityGalleryController extends Controller
     {
         $name = $request->input('name'); // Получаем имя из запроса
 
-        // Проверяем, что имя задано, иначе возвращаем пустой ответ
+        // Проверяем, что имя задано,    иначе возвращаем пустой ответ
         if (empty($name)) {
             return response()->json([]);
         }
@@ -99,6 +100,8 @@ class UniversityGalleryController extends Controller
             $query->where('name', 'like', '%' . $name . '%');
         })->limit(50)->get();
 
-        return response()->json($universities);
+
+
+        return response()->json(UniversityControllerResource::collection($universities));
     }
 }

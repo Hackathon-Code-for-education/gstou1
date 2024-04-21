@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiOutlineHome, AiOutlineTeam, AiOutlineProject, AiOutlineSearch} from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import axios from "axios"
+
+
+
 const people = [
     {
       name: 'ГГНТУ',
@@ -48,6 +52,28 @@ const people = [
 ]
 
 const PageUniver = () => {
+
+  // const [universities, setUniversities] = useState([])
+ 
+  // useEffect(() => {
+  //   const fetchUniversities = async () => {
+      
+  //     try {
+  //       const response = fetch('http://ashabars.beget.tech/api/univers/search?name=S', {
+  //         method: 'GET',
+  //         headers: {'Authorization': `Bearer ${localStorage.getItem('authToken')}`}
+  //       })
+  //       if (response.ok) {
+  //         const data = await response.json(); // Преобразование ответа в JSON
+  //         setUniversities(data); // Обновление состояния списка университетов
+  //       }
+  //     } catch (error) {
+  //       console.error('Failed to fetch universities:', error); // Логирование ошибки
+  //     }
+  //   }
+  //   fetchUniversities()
+  // },[])
+ 
     return (
         <>
         <div className='flex justify-center mt-10'>

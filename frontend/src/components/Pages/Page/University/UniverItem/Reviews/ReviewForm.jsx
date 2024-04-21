@@ -7,7 +7,7 @@ const ReviewForm = () => {
   const [content, setContent] = useState('');
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
-
+  const [reviews, setReviews] = useState([]);
   const handleReviewChange = (e) => {
     setContent(e.target.value);
   }
@@ -21,16 +21,28 @@ const ReviewForm = () => {
     e.preventDefault();
     
     const formReview = {
-      
+
       text: content,
       rating: rating
     }; 
+
+    const newReview = {
+      text: content,
+      rating: rating
+    };
+
+    setReviews([...reviews, newReview]);
+
+    setContent('');
+    setRating(0);
+    setHoverRating(0);
 
     try {
       const response = await fetch('', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.authToken}`
         },
         body: JSON.stringify(formReview)
       });
