@@ -42,6 +42,7 @@ const ReviewForm = () => {
       }
     } catch (error) {
       console.error('Failed to send form data:', error);
+      console.log(formReview)
     }
   };
 
