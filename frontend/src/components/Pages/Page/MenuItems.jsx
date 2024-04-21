@@ -19,7 +19,7 @@ const MenuItems = () => {
         </div>
             <div>
             <div className='flex'>
-            <div className={`flex items-center p-2 mt-2 rounded-lg cursor-pointer text-lg ${activeComponent === 'university' ? 'text-blue-600 bg-blue-100' : 'hover:bg-gray-100'}`} onClick={() => handleComponentChange('university')}>
+            <div className={`flex items-center p-2 mt-2 rounded-lg  text-lg ${activeComponent === 'university' ? 'text-blue-600 bg-blue-100' : 'hover:bg-gray-100'}`} onClick={() => handleComponentChange('university')}>
               <AiOutlineTeam className="mr-3 " />
               Университеты
             </div>

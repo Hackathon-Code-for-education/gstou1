@@ -4,13 +4,19 @@ import PageUniver from "./UniverItem";
 import Students from "./Students";
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import {Router, Routes, Route } from 'react-router-dom';
+import UniverItem from "./UniverItem";
 
 const MenuUniver = () => {
+
+  const [activeComp, setActiveCopm] = useState('university')
+
+  let changeActiveCopm = (value) => {
+    setActiveCopm(value)
+    console.log(value);
+  }
+
   const [open, setOpen] = useState(true);
-  const Menus = [
-    { title: "Главное"},
-    { title: "Студенты"}
-  ];
+  
 
   return (
     <div className="flex">
@@ -34,21 +40,24 @@ const MenuUniver = () => {
           </h1>
         </div>
         <ul className="pt-6">
-          {Menus.map((Menu, index) => (
             <li
-              key={index}
-              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 
-              ${Menu.gap ? "mt-9" : "mt-2"} ${
-                index === 0 && "bg-light-white"
-              } `}
-            >
+              onClick={() => changeActiveCopm('university')}
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 ${activeComp === 'university' ? 'bg-light-white' : 'hover:bg-gray-100'}`}>
               <AiOutlineTeam className="mr-3" />
-              <span className={`${!open && "hidden"} origin-left duration-200`}>
-                {Menu.title}
-              </span>
+              <span className={`${!open && "hidden"} origin-left duration-200`}>Главное</span>
             </li>
-          ))}
+            <li
+              onClick={() => changeActiveCopm('students')}
+              className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center gap-x-4 ${activeComp === 'students' ? 'bg-light-white' : 'hover:bg-gray-100'}`}>
+              <AiOutlineTeam className="mr-3" />
+              <span className={`${!open && "hidden"} origin-left duration-200`}>Студенты</span>
+            </li>
         </ul>
+      </div>
+      <div className="h-screen flex-1 p-7">
+      {/* {activeComp == 'university' ? <UniverItem/> : <Students/>} */}
+      {activeComp === 'university' && <UniverItem />}
+      {activeComp === 'students' && <Students />}
       </div>
     </div>
   );
