@@ -21,8 +21,9 @@ const ReviewForm = () => {
     e.preventDefault();
     
     const formReview = {
-      Content: content,
-      Rating: rating
+      
+      text: content,
+      rating: rating
     }; 
 
     try {
