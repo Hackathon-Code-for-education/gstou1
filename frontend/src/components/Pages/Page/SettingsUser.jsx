@@ -1,6 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SettingsUser = () => {
+    const logOut = () => {
+        localStorage.clear()     
+    }
     return (
         <div className=''>
             <div className="bg-white w-full flex flex-col gap-5 px-3 mx-auto md:px-16 lg:px-28 md:flex-row text-[#161931]">
@@ -10,7 +14,7 @@ const SettingsUser = () => {
                     <a href="#" className="flex items-center px-3 py-2.5 font-bold bg-white text-indigo-900 border rounded-full">Абитуриент</a>
                     <a href="#" className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full">Студент</a>
                     <a href="#" className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full">ВУЗ</a>
-                    <a href="#" className="flex items-center px-3 py-2.5 mt-[20px] font-bold text-[18px] text-[#ff2929]  hover:text-indigo-900 hover:border hover:rounded-full">Выйти</a>
+                    <Link onClick={logOut} to="/" className="flex items-center px-3 py-2.5 mt-[20px] font-bold text-[18px] text-[#ff2929]  hover:text-indigo-900 hover:border hover:rounded-full">Выйти</Link>
                 </div>
             </aside>
             <main className="w-full min-h-screen py-1 md:w-2/3 lg:w-3/4">
