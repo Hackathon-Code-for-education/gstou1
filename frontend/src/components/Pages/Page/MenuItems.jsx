@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import { AiOutlineHome, AiOutlineTeam, AiOutlineProject, AiOutlineSearch} from 'react-icons/ai';
 import { FiSettings } from 'react-icons/fi';
 import PageUniver from './University/PageUniver';
-import SettingsUser from './SettingsUser';
+import SettingsUser from './Settings/SettingsUser';
 
 let token = localStorage.getItem('authToken')
+
 const MenuItems = () => {
     const [activeComponent, setActiveComponent] = useState('university');
 
@@ -12,7 +13,9 @@ const MenuItems = () => {
       setActiveComponent(component);
     }
     console.log(token);
+    
   if (token) {
+    
     return (
       <div>
          <nav className='flex justify-between p-6 border-b-2 border-[#9e9a9a]'>
@@ -40,6 +43,7 @@ const MenuItems = () => {
             
     );
   }
+  
 };
 
 export default MenuItems;
