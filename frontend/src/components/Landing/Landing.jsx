@@ -6,6 +6,8 @@ import Testimonial from './Testimonial';
 import Footer from './Footer';
 
 const Landing = () => {
+
+  console.log(localStorage.getItem('authToken'));
   return (
     <>
       <Navbar />
