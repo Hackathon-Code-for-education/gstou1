@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use App\Orchid\Screens\UniversityApplicationEditScreen;
+use App\Orchid\Screens\UniversityApplicationScreen;
+
 use App\Orchid\Screens\Examples\ExampleCardsScreen;
 use App\Orchid\Screens\Examples\ExampleChartsScreen;
 use App\Orchid\Screens\Examples\ExampleFieldsAdvancedScreen;
@@ -60,6 +63,12 @@ Route::screen('users', UserListScreen::class)
     ->breadcrumbs(fn (Trail $trail) => $trail
         ->parent('platform.index')
         ->push(__('Users'), route('platform.systems.users')));
+
+Route::screen('applications', UniversityApplicationScreen::class)
+    ->name('platform.applications.list');
+
+Route::screen('application/{application}/edit', UniversityApplicationEditScreen::class)
+    ->name('platform.application.edit');
 
 // Platform > System > Roles > Role
 Route::screen('roles/{role}/edit', RoleEditScreen::class)
