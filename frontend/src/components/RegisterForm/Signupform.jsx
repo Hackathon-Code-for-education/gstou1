@@ -40,18 +40,8 @@ const register = async (obj) => {
   }
   
 }
-const fetchAuthStatus = async () => {
-  try {
-    const token = localStorage.getItem('authToken');
-    const response = await axios.get('http://ashabars.beget.tech/api/user', {
-      headers: { Authorization: `Bearer ${token}` }
-    });
-    return response.data; 
-  } catch (error) {
-    console.error('Error fetching auth status:', error);
-    return null; 
-  }
-};
+
+
 
 
 

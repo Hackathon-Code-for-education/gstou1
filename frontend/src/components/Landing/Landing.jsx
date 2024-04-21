@@ -4,6 +4,7 @@ import Hero from './Hero';
 import Features from './Features';
 import Testimonial from './Testimonial';
 import Footer from './Footer';
+import Image from '../Image';
 
 const Landing = () => {
   return (
@@ -13,6 +14,7 @@ const Landing = () => {
       <Features />
       <Testimonial />
       <Footer />
+      {/* <Image /> */}
     </>
   );
 }

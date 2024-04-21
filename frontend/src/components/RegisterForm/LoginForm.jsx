@@ -22,11 +22,7 @@ const authenticate = async (email, password) => {
 
     console.log('Authentication successful:', response.data);
     localStorage.setItem('authToken', response.data.access_token);
-    localStorage.setItem('authUser', response.data.user);
-
-    const authenticateResult = !!response.data.access_token;
-
-    return authenticateResult
+    localStorage.setItem('authUser', response.data.user)
   } catch (error) {
     console.error('Authentication error:', error);
     throw error;
