@@ -70,4 +70,26 @@ class User extends Authenticatable
         'updated_at',
         'created_at',
     ];
+
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
+    }
+
+    public function canSubmitApplication($universityId)
+    {
+        $pendingOrConfirmed = $this->applications()
+            ->where(function ($query) {
+                $query->where('is_confirmed', true)
+                    ->orWhereNull('is_confirmed');
+            })
+            ->where('university_id', $universityId)
+            ->exists();
+        return !$pendingOrConfirmed;
+    }
+
+    public function universities()
+    {
+        return $this->hasMany(UniversityStudent::class);
+    }
 }

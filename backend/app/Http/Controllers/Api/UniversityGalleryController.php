@@ -84,4 +84,21 @@ class UniversityGalleryController extends Controller
 
         return response()->json(['message' => 'Image not found'], 404);
     }
+
+    public function search(Request $request)
+    {
+        $name = $request->input('name'); // Получаем имя из запроса
+
+        // Проверяем, что имя задано, иначе возвращаем пустой ответ
+        if (empty($name)) {
+            return response()->json([]);
+        }
+
+        // Ищем университеты, чье имя содержит заданную строку
+        $universities = University::when($name, function($query) use ($name) {
+            $query->where('name', 'like', '%' . $name . '%');
+        })->limit(50)->get();
+
+        return response()->json($universities);
+    }
 }

@@ -1,23 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
 
-const SettingsUser = () => {
-    const logOut = () => {
-        localStorage.clear()     
-    }
-    return (
-        <div className=''>
-            <div className="bg-white w-full flex flex-col gap-5 px-3 mx-auto md:px-16 lg:px-28 md:flex-row text-[#161931]">
-            <aside className="hidden py-4 md:w-1/3 lg:w-1/4 md:block">
-                <div className="sticky flex flex-col gap-2 p-4 text-sm border-r border-indigo-100 top-12">
-                    <h2 className="pl-3 mb-4 text-2xl font-semibold">Настройки</h2>
-                    <a href="#" className="flex items-center px-3 py-2.5 font-bold bg-white text-indigo-900 border rounded-full">Абитуриент</a>
-                    <a href="#" className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full">Студент</a>
-                    <a href="#" className="flex items-center px-3 py-2.5 font-semibold hover:text-indigo-900 hover:border hover:rounded-full">ВУЗ</a>
-                    <Link onClick={logOut} to="/" className="flex items-center px-3 py-2.5 mt-[20px] font-bold text-[18px] text-[#ff2929]  hover:text-indigo-900 hover:border hover:rounded-full">Выйти</Link>
-                </div>
-            </aside>
-            <main className="w-full min-h-screen py-1 md:w-2/3 lg:w-3/4">
+const Abiturent = () => {
+
+    return(
+        <main className="w-full min-h-screen py-1 md:w-2/3 lg:w-3/4">
                 <div className="p-2 md:p-4">
                     <div className="w-full px-6 pb-8 mt-8 sm:max-w-xl sm:rounded-lg">
                         <h2 className="pl-6 text-2xl font-bold sm:text-xl">Анкета для студента</h2>
@@ -52,10 +38,7 @@ const SettingsUser = () => {
                                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-indigo-900 dark:text-white">Ваша почта</label>
                                     <input type="email" id="email" className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="your.email@mail.com" required />
                                 </div>
-                                <div className="mb-2 sm:mb-6">
-                                    <label htmlFor="profession" className="block mb-2 text-sm font-medium text-indigo-900 dark:text-white">Прикрепить справку о обучении</label>
-                                    <input type="file" id="profession" className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="your profession" required />
-                                </div>
+                                    
                                 <div className="mb-6">
                                     <label htmlFor="message" className="block mb-2 text-sm font-medium text-indigo-900 dark:text-white">Bio</label>
                                     <textarea id="message" rows="4" className="block p-2.5 w-full text-sm text-indigo-900 bg-indigo-50 rounded-lg border border-indigo-300 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Write your bio here..."></textarea>
@@ -68,9 +51,7 @@ const SettingsUser = () => {
                     </div>
                 </div>
             </main>
-        </div>
-        </div>
-    );
-};
 
-export default SettingsUser;
+    )
+}
+export default Abiturent 
