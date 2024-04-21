@@ -1,10 +1,50 @@
 import React from "react"
-// input Name
-// photo
+import axios from "axios"
 
+import { useState } from "react";
 
 const StudentApplication = () => {
 
+  const [text, setText] = useState('');
+  const [images, setImages] = useState([]);
+
+  const handleTextChange = (e) => {
+    setText(e.target.value);
+  };
+
+  const handleImagesChange = (e) => {
+    setImages([...e.target.files]);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+
+    formData.append('text', text);
+    formData.append('university_id', 1);
+
+    images.forEach((image, index) => formData.append(`images[${index}]`, image));
+
+    const authToken = localStorage.getItem('authToken');
+
+    try {
+        const response = await axios.post('http://ashabars.beget.tech/api/universities/applications/request', formData, {
+            headers: {
+              'Authorization': `Bearer ${authToken}`,
+              'Content-Type': 'multipart/form-data' // Эту строку можно опустить, так как браузеры обычно устанавливают правильный Content-Type автоматически для объектов FormData.
+            }
+          });
+          
+
+      console.log(response.data);
+
+      alert('Данные успешно отправлены!');
+    } catch (error) {
+      console.error('Ошибка при отправке формы:', error);
+      alert('Ошибка при отправке данных!');
+    }
+  };
     return(
         <main className="w-full min-h-screen py-1 md:w-2/3 lg:w-3/4">
                 <div className="p-2 md:p-4">
@@ -30,16 +70,16 @@ const StudentApplication = () => {
 
                                     <div className="mb-2 sm:mb-6">
                                     <label htmlFor="profession" className="block mb-2 text-sm font-medium text-indigo-900 dark:text-white">Прикрепить справку о обучении</label>
-                                    <input type="file" id="profession" className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="your profession" required />
+                                    <input onChange={handleImagesChange}type="file" id="profession" className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="your profession" required />
                                 </div>
                                 
                                 <div className="mb-2 sm:mb-6">
                                     <label htmlFor="name" className="block mb-2 text-sm font-medium text-indigo-900 dark:text-white">Your name</label>
-                                    <input type="name" id="name" className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="your name" required />
+                                    <input onChange={handleTextChange} value={text}type="name" id="name" className="bg-indigo-50 border border-indigo-300 text-indigo-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5" placeholder="your name" required />
                                 </div>
 
                                 <div className="flex justify-end">
-                                    <button type="submit" className="text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">Подать заявку</button>
+                                    <button onClick={handleSubmit} type="submit" className="text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">Подать заявку</button>
                                 </div>
                         </div>
                     </div>
