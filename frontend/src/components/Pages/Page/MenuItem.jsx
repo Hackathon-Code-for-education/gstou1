@@ -1,12 +1,12 @@
 import React from 'react';
 import { AiOutlineHome, AiOutlineTeam, AiOutlineProject, AiOutlineSearch} from 'react-icons/ai';
 import { FiSettings } from 'react-icons/fi';
-import Search from './Search';
+import PageUniver from './University/PageUniver';
 
 const Menu = () => {
   return (
     <div>
-                    <nav className='flex justify-between p-6 border-b-2 border-[#9e9a9a]'>
+       <nav className='flex justify-between p-6 border-b-2 border-[#9e9a9a]'>
 
         <div className='pt-2 text-[25px] text-darkBlue font-bold'>
         Xaxathon
@@ -17,14 +17,6 @@ const Menu = () => {
         <AiOutlineTeam className="mr-3" />
         Университеты
         </div>
-        {/* <div className="flex items-center p-2 mt-2 rounded-lg text-lg hover:bg-gray-100">
-        <AiOutlineTeam className="mr-3" />
-        Студенты
-        </div>
-        <div className="flex items-center p-2 mt-2 rounded-lg text-lg hover:bg-gray-100">
-        <AiOutlineProject className="mr-3" />
-        Галерея
-        </div> */}
         <div className="flex items-center p-2 mt-2 rounded-lg text-lg hover:bg-gray-100">
         <FiSettings className="mr-3" />
         Профиль
@@ -33,7 +25,6 @@ const Menu = () => {
             </div>
             
         </nav>
-        <Search />
     </div>
           
   );

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
-import ReviewsList from './ReviewsList';
-import ReviewForm from './ReviewForm';
+import ReviewsList from './Reviews/ReviewsList';
+import ReviewForm from './Reviews/ReviewForm';
 
 function PageUniver() {
 

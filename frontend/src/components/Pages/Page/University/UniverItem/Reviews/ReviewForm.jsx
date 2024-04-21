@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 
 const ReviewForm = ({ onSubmit }) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState('ИМЯ СТУДЕНТА');
   const [content, setContent] = useState('');
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
@@ -18,17 +18,9 @@ const ReviewForm = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit} className="mx-auto max-w-sm rounded overflow-hidden p-4 m-4 bg-white shadow-lg">
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-          Имя
-        </label>
-        <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          id="name"
-          type="text"
-          placeholder="Введите ваше имя"
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
+        <div className="block text-gray-700 text-sm font-bold mb-2">
+          Ваше имя: {name}
+        </div>
       </div>
       <div className="mb-4">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="content">

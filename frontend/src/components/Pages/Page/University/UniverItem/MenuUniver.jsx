@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AiOutlineHome, AiOutlineTeam, AiOutlineProject, AiOutlineSearch} from 'react-icons/ai';
-import PageUniver from "./PageUniver";
+import PageUniver from "./UniverItem";
 import Students from "./Students";
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import {Router, Routes, Route } from 'react-router-dom';
@@ -9,8 +9,7 @@ const Univer = () => {
   const [open, setOpen] = useState(true);
   const Menus = [
     { title: "Главное"},
-    { title: "Студенты"},
-    { title: "Галерея" }
+    { title: "Студенты"}
   ];
 
   return (
@@ -50,12 +49,6 @@ const Univer = () => {
             </li>
           ))}
         </ul>
-      </div>
-      <div className="h-screen flex-1 p-7">
-        <Routes>
-            <Route path="/students" element={<Students />} />
-            <Route path="/students" element={<PageUniver /> } />
-        </Routes>
       </div>
     </div>
   );
