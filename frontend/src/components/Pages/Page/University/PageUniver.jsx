@@ -1,11 +1,11 @@
 import React from 'react';
 import { AiOutlineHome, AiOutlineTeam, AiOutlineProject, AiOutlineSearch} from 'react-icons/ai';
-import Menu from '../MenuItem';
+import { Link } from 'react-router-dom';
 const people = [
     {
       name: 'ГГНТУ',
       local: 'Грозный ул-Адамова',
-      link: 'ТУТ ДОЛЖЕН БЫТЬ LINK REACT-ROUTER',
+      link: `/page/univer`,
       imageUrl:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB7EOT1lTbm4-GalvHC7izIhMnf770aGy7mgxYpPQFCA&s',
     },
@@ -50,7 +50,6 @@ const people = [
 const PageUniver = () => {
     return (
         <>
-         <Menu />
         <div className='flex justify-center mt-10'>
         <div className='bg-gray-200 rounded-full flex items-center px-2 w-[200px] sm:w-[400px] lg:w-[500px]'>
         <AiOutlineSearch size={25} />
@@ -72,9 +71,9 @@ const PageUniver = () => {
               <p className="text-[14px] font-semibold leading-6 text-gray-500">{person.local}</p>
             </div>
           </div>
-          <a href={person.link} className="flex items-center shrink-0 bg-darkBlue text-white px-3 h-[50px] rounded-full hover:bg-slate-500 cursor-pointer">
+          <Link to={person.link} className="flex items-center shrink-0 bg-darkBlue text-white px-3 h-[50px] rounded-full hover:bg-slate-500 cursor-pointer">
             Посмотреть
-          </a>
+          </Link>
         </li>
       ))}
     </ul>

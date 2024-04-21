@@ -13,7 +13,7 @@ function MessageForm({ onSend }) {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="form-control mt-4">
+        <form onSubmit={handleSubmit} className="form-control">
             <label className="label">
                 <span className="label-text">Enter your message:</span>
             </label>

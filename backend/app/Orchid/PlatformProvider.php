@@ -10,7 +10,7 @@ use Orchid\Platform\OrchidServiceProvider;
 use Orchid\Screen\Actions\Menu;
 use Orchid\Support\Color;
 
-class PlatformProvider extends OrchidServiceProvider
+class   PlatformProvider extends OrchidServiceProvider
 {
     /**
      * @param Dashboard $dashboard

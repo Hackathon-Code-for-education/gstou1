@@ -5,7 +5,7 @@ import Students from "./Students";
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import {Router, Routes, Route } from 'react-router-dom';
 
-const Univer = () => {
+const MenuUniver = () => {
   const [open, setOpen] = useState(true);
   const Menus = [
     { title: "Главное"},
@@ -53,4 +53,4 @@ const Univer = () => {
     </div>
   );
 };
-export default Univer;
+export default MenuUniver;

@@ -4,7 +4,7 @@ import { RxDotFilled } from 'react-icons/rx';
 import ReviewsList from './Reviews/ReviewsList';
 import ReviewForm from './Reviews/ReviewForm';
 
-function PageUniver() {
+function UniverItem() {
 
     const [reviews, setReviews] = useState([
         { id: 1, author: "Иван Иванов", content: "Отличная компания, рекомендую!", rating: 5 },
@@ -105,4 +105,4 @@ function PageUniver() {
   );
 }
 
-export default PageUniver;
+export default UniverItem;
