@@ -2,6 +2,8 @@
 import { Link } from 'react-router-dom';
 import illustrationIntro from '../../assets/images/illustration-intro.jpg';
 
+
+
 const Hero = () => {
   return (
     <section id='hero'>
