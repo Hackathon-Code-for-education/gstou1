@@ -98,7 +98,7 @@ function UniverItem() {
             <div className="card w-96 bg-base-100 mx-auto shadow-xl image-full">
               <figure><img src="https://i.vuzopedia.ru/storage/app/uploads/public/62f/502/1f2/62f5021f2d45e827975715.jpg" alt="Shoes" /></figure>
               <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
+                <h2 className="card-title"></h2>
                 <p>If a dog chews shoes whose shoes does he choose?</p>
                 <div className="card-actions justify-end">
                   <button className="btn btn-primary">Buy Now</button>

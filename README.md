@@ -1,5 +1,7 @@
 # gstou1
 
+/ Backend 
+
 скачать php8.1
 скачать композер
 в папке backend скопировать файл .env.example и назвать его .env 
@@ -13,3 +15,10 @@
 прописать php artisan load:uni
 прописать php artisan db:seed --class=RoleSeeder
 создать админа прописав php artisan admin:create name surname email password
+
+/ Frontend
+
+npm i --force 
+
+npm start
+
