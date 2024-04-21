@@ -38,8 +38,11 @@ const MenuItems = () => {
           {activeComponent === 'settings' && <SettingsUser />}
       </div>
             
-    );
+    )
+   
   }
+  else
+  return alert("Пожалуйста, авторизируйтесь")
 };
 
 export default MenuItems;
